@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 # rofi i3 and sway scratchpad menu mode v2.2
 
 tmp_dir="${TMPDIR:-/tmp}"
