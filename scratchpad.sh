@@ -1,5 +1,5 @@
 #!/bin/sh
-# rofi i3 and sway scratchpad menu mode v2.2
+# rofi i3 and sway scratchpad menu mode v2.3
 
 tmp_dir="${TMPDIR:-/tmp}"
 
@@ -35,8 +35,11 @@ get_scratched() {
 	count=0
 	while IFS="$(printf '\t')" read -r winid app_id data; do
 		case "$app_id" in
-			org.*)
+			dev.*|org.*)
 				icon="$app_id"
+			;;
+			signal)
+				icon="$app_id-desktop"
 			;;
 			*)
 				icon=$(printf '%s\n' "$app_id" | tr '[:upper:]' '[:lower:]')
